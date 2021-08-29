@@ -1,0 +1,16 @@
+kind: Job
+apiVersion: batch/v1
+
+metadata:
+  name: whalesay2
+
+spec:
+  template:
+    spec:
+      containers:
+      - name: whalesay
+        image: docker/whalesay
+        command: ["cowsay", "This is a Kubernetes Job! by DevOps Class"]
+      restartPolicy: Never
+  backoffLimit: 4
+  activeDeadlineSeconds: 60

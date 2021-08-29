@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: podwithselector
+
+spec:
+  nodeSelector:
+    disk_type: "ssd"
+  containers:
+  - name: mycont1
+    image: "ksbhatti/helloworld"
+    ports:
+    - containerPort: 80
+

@@ -1,0 +1,25 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+
+metadata:
+  name: myreplicaset
+
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      key: app
+      operator: In
+      values:
+        prod1
+  template:
+  - metadata:
+      lables:
+        app: prod1
+    spec:
+      containers:
+      - name: replicasetcontainer
+        image: "ksbhatti/helloworld"
+        ports:
+        - containerPort: 80
+

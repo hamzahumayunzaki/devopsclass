@@ -1,0 +1,24 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: multicontainer-single-volume
+spec:
+  volumes:
+  - name: share-dir
+    emptyDir: {}
+  containers:
+  - name: container-one
+    image: ksbhatti/logfile_nodejs
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: share-dir
+      mountPath: /data
+
+  - name: container-two
+    image: ksbhatto/node-js-app
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: share-dir
+      mountPath: /var/c-two

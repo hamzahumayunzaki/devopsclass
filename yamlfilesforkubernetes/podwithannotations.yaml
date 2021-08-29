@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: podwithannotations
+  annotations:
+    createdBy: "Hamza Humayun"
+    email: "hamzahumayunzaki@gmail.com"
+    contact: "0300000000" 
+spec:
+  containers:
+  - name: mycont1
+    image: "ksbhatti/helloworld"
+    ports:
+    - containerPort: 80
+

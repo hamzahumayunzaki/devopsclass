@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-cm-env1
+  labels:
+    app: cmexample
+spec:
+  containers:
+  - name: configmap-container
+    image: ksbhatti/pkflag
+    envFrom:
+    - configMapRef:
+        name: cm03

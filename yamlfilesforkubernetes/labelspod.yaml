@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: podwithlabels
+  labels:
+    type: backend
+    env: production
+    workload: database
+    
+spec:
+  containers:
+  - name: mycont1
+    image: "ksbhatti/helloworld"
+    ports:
+    - containerPort: 80
+

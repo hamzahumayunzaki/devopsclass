@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: multicontainerpod03
+
+spec:
+  containers:
+  - name: mycont1
+    image: ksbhatti/helloworld
+    ports:
+    - containerPort: 80
+  - name: mycont2
+    image: ksbhatti/b4image02:v2
+    ports:
+    - containerPort: 8080

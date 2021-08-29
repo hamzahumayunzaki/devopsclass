@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myaoo-ln-http2
+spec:
+  containers:
+  - name: myapp
+    image: ksbhatti/pkflag
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        port: 80
+        path: /

@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: myapp-rn-http2
+spec:
+  containers:
+  - name: myapp
+    image: ksbhatti/pkflag
+    ports:
+    - containerPort: 80
+    readinessProbe:
+      httpGet:
+        port: 80
+        path: /
